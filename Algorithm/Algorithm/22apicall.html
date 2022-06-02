@@ -1,0 +1,38 @@
+<div id="demo"></div>
+<div id="demo1"></div>
+<div id="demo2"></div>
+<script>
+  debugger;
+
+let a=["https://jsonplaceholder.typicode.com/todos/1","https://jsonplaceholder.typicode.com/todos/1","https://jsonplaceholder.typicode.com/todos/1"];
+function getCall()
+{
+  let  temp=new Promise((resolve,reject)=>{
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      resolve("success");
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+    }
+
+  };
+  xhttp.open("GET", "https://jsonplaceholder.typicode.com/todos/1", true);
+  xhttp.send();
+  });
+  return temp;
+}
+
+getCall().then(result=>{
+  console.log(result);
+},error=>{
+  console.log(error);
+});
+
+fetch('https://jsonplaceholder.typicode.com/todos/1')
+  .then(response => response.json())
+  .then(json => console.log(json))
+</script>
+
+
+

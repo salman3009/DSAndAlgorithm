@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title>Array reverse</title>
+</head>
+
+<body>
+    <input type="button" name="reversewords" value="reversewords" onclick="global('There is good will')">
+</body>
+
+</html>
+<script>
+    function global(n) {
+        debugger;
+        let resultData=n.split(' ');
+        let len=resultData.length;
+        for(let i=0;i<len;i++)
+        {
+            resultData[i]=arrayreverse(resultData[i]);
+        }
+        function arrayreverse(arr) {
+            return arr.split('').reverse().join('');
+        }
+        
+        console.log(resultData);
+    }
+
+</script>

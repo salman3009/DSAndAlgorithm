@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title>Memorized fibo</title>
+</head>
+
+<body>
+    <button onclick="fibo(8)">fibo</button>
+</body>
+
+</html>
+<script>
+    var cache = [];
+    function fibo(n) {
+        if (this.cache.length > n) {
+            return this.cache;
+        }
+        fib2(n, 0, 1);
+    }
+    function fib2(n, p0, p1) {
+        if (cache.length > n) {
+            return this.cache;
+        }
+        this.cache.push(p0 + p1);
+        fib2(n - 1, p1, p0 + p1);
+    }
+    console.log(this.cache);
+</script>

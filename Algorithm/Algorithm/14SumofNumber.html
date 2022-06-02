@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>
+Sum of numbers
+</title>
+</head>
+<body>
+<button onclick="sum([1, 2, 2, 3, 4],4)">Sum</button>
+</body>
+</html>
+<script>
+function sum(n,a)
+{
+    debugger;
+    let solutionArray=[];
+    let len=n.length;
+    for(let i=0;i<len;i++)
+    {
+     for(let j=i+1;j<len;j++)
+     {
+         if(n[i]+n[j]==a)
+         {
+             solutionArray.push([n[i],n[j]]);
+         }
+     }
+    }
+    console.log(solutionArray);
+}
+</script>

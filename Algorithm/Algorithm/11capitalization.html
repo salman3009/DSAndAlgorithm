@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <title>Capitalization </title>
+</head>
+
+<body>
+    <input type="button" name="capitalization" value="capitalization" onclick="global('There is good will')">
+</body>
+
+</html>
+<script>
+    function global(n) {
+        debugger;
+        let resultData=n.split(' ');
+        let len=resultData.length;
+        for(let i=0;i<len;i++)
+        {
+            resultData[i]=arraycapitalize(resultData[i]);
+        }
+        function arraycapitalize(arr) {
+            return arr.charAt(0).toUpperCase()+arr.substring(1);
+        }
+        console.log(resultData);
+    }
+
+</script>

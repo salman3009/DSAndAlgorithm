@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>
+Max Profit
+</title>
+</head>
+<body>
+<button onclick="profit([2, 10, 1, 3])">Max Profit</button>
+</body>
+</html>
+<script>
+function profit(n)
+{
+    debugger;
+    let greatest=0;
+    let len=n.length;
+    let index;
+    for(let i=0;i<len;i++)
+    {
+        if(greatest<n[i])
+        {
+            greatest=n[i];
+            index=i;
+        }
+    }
+
+    let smallest=greatest;
+    let smindex=0;
+    for(let j=0;j<index;j++)
+    {
+        if(smallest>n[j])
+        {
+            smallest=n[j];
+            smindex=j;
+        }
+    }
+    console.log(n[smindex],n[index]);
+}
+</script>

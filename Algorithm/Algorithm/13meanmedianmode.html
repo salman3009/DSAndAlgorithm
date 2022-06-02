@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>Mean,Median,Mode</title>
+</head>
+<body>
+<button onclick="Mean([4,4,5])">Mean</button>
+<button onclick="Median([5,4,3,2])">Median</button>
+<button onclick="Mode([2,2,2,4,5,7,7,7,8,7])">Mode</button>
+<div id="value"></div>
+</body>
+</html>
+<script>
+function Mean(n)
+{
+    let len=n.length;
+    let sum=0;
+    for(let i=0;i<len;i++)
+    {
+      sum+=n[i];
+    }
+    document.getElementById("value").innerHTML=parseInt(sum/len);
+}
+function Median(n)
+{
+    let len = n.length;
+    let result=0;
+    if(len%2!=0)
+    {
+        document.getElementById("value").innerHTML=n[parseInt((len-1)/2)];
+    }
+    else{
+       document.getElementById("value").innerHTML=parseInt((n[parseInt((len-1)/2)]+n[parseInt(((len-1)/2)+1)])/2);;
+    }
+}
+function Mode(n)
+{
+    debugger;
+    let count={};
+
+    //separating the count and value of data
+    n.forEach(function(s){
+        count[s]?count[s]++:count[s]=1;
+    });
+
+  //Converting normal object to Map
+    var myMap = new Map();
+    Object.keys(count).forEach(key => {
+    myMap.set(key, count[key]);
+});
+
+//Sorting the Map according to values
+const mapSort1 = new Map([...myMap.entries()].sort((a, b) => b[1] - a[1]));
+let result= mapSort1.values().next().value
+
+//Finding the greatest value in map.
+for (var [key, value] of mapSort1) {
+   if(result==value)
+   {
+    console.log(key + ' = ' + value);
+   }
+   else{
+       return;
+   }
+}
+}
+
+</script>

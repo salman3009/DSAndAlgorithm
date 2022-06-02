@@ -1,0 +1,59 @@
+<script>
+/*1.check number is integer*/
+const check=(a)=> a%1===0;
+console.log(check(2));
+
+/*2.anonymous function*/
+(()=>{
+var a=b=5;
+})();
+console.log(b);
+/*3.two function call with closure*/
+function multiply(a){
+    return function c(b)
+    {
+        return a*b;
+    }
+}
+console.log(multiply(4)(4));
+
+/*4.bind function*/
+function full()
+{
+    return "The value is"+this.firstname+"The last name is"+this.lastname;
+}
+const person={firstname:"salman",lastname:"ahmed"};
+console.log(full.bind(person)());
+
+/*5 strict function*/
+function call()
+{
+    // "use strict";
+    x="salman";
+    console.log(x);
+}
+call();
+/*6 == and ===*/
+console.log([]==false);
+console.log([]===false);
+
+/*7 Adding own method in Array object*/
+Array.prototype.average=function()
+{
+    var sum=this.reduce((cur,value)=>cur+value);
+    return sum/this.length;
+}
+let avg=[2,2];
+let result=avg.average();
+console.log(result);
+
+/*8 check following output*/
+console.log(0.1+0.2==0.3);
+
+/*9Creating private variable*/
+function make()
+{
+    var p="salman";
+}
+// console.log(p);
+</script>

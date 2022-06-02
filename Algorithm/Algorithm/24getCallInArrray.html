@@ -1,0 +1,27 @@
+
+<script>
+debugger;
+let a=["https://jsonplaceholder.typicode.com/todos/1","https://jsonplaceholder.typicode.com/todos/1","https://jsonplaceholder.typicode.com/todos/1"];
+let i=0;
+while(i<a.length)
+ {
+  getApi();
+  i++;
+  if(i==a.length)
+  {
+    console.log("equal");
+  }
+ }
+
+ function getApi()
+ {
+   return fetch(a[i])
+  .then(response => response.json())
+  .then(json => console.log(json)).catch(error=>{
+    console.log(error);
+  })
+ }
+</script>
+
+
+

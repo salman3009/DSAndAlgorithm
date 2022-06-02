@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>
+StairCase
+</title>
+<body>
+<button onclick="StairCase(5)">StairCase</button>
+</body>
+</head>
+</html>
+<script>
+function StairCase(n) {
+    debugger;
+    var s = '';
+    for (var i = 1; i <= n; i++) {
+           s += ' '.repeat(n - i) + '#'.repeat(i)  + '\n';
+       
+    }
+    console.log(s);
+}
+</script>

@@ -1,0 +1,36 @@
+//Data Structure and Algorithm
+(i)
+--<O(1) means the time to access something is independent of the number of items in the collection.
+Example:
+int identity(int i) {
+    if(i == 0) {
+        sleep(60 * 60 * 24 * 365);
+    }
+    return i;
+}
+--------------------------------------------------------------------------------------------------------------------------------
+(ii)
+-->O(N) would mean the time to access an item is a proportional to the number (N) of items in the collection.
+Example:
+int count(int *a, int n, int item) {
+    int c = 0;
+    for(int i = 0; i < n; i++) {
+        if(a[i] == item) c++;
+    }
+    return c;
+}
+------------------------------------------------------------------------------------------------------------------------------------
+(iii)
+O(log n) and n(log n)
+-->Imagine a database with with every person in the world. That's 6.7 billion entries. O(log n) is a lookup on an indexed column (e.g. primary key). O(n log n) is returning the entire population in sorted order on an unindexed column.
+-->O(log n) was finished before you finished reading the first word of that sentence.
+-->O(n log n) is still calculating...
+------------------------------------------------------------------------------------------------------------------------------------
+(iv)
+O(n square)
+-->In this example I am nesting two loops. If the array has n items, the outer loop runs n times and the inner loop runs n times for each iteration of the outer loop, giving us n²​​ total prints. Thus this function runs in O(n²) time (or “quadratic time”). If the array has 10 items, I have to print 100 times. If it has 1,000 items, I have to print 1,000,000 times.
+--------------------------------------------------------------------------------------------------------------------------------------
+(v)
+-->Expontential: O(2^n)
+-->Factorial: O(n!)
+==========================================================================================================================================================================
