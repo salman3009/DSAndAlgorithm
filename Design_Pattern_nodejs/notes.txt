@@ -1,0 +1,96 @@
+https://medium.com/@techsuneel99/design-patterns-in-node-js-31211904903e
+
+Design Pattern:
+1.Singleton Pattern 
+The Singleton pattern ensures that a class has only one instance 
+and provides a global point of access to it.
+
+2.Factory Pattern 
+The Factory pattern offers a way to create objects without
+specifying the exact class of object that will be created
+example:
+switch(model) {
+      case 'civic':
+        return new Car('Honda Civic', 20000);
+      case 'accord':  
+        return new Car('Honda Accord', 25000);
+      case 'odyssey':
+        return new Car('Honda Odyssey', 30000);
+      default:
+        throw new Error('Unknown model');
+    }
+
+3.Observer Pattern
+pattern involves a subject that maintains a list of its dependents, 
+called observers, and notifies them of any state changes
+   1.Subject
+   2.subscribe
+   3.unsubscribe
+   4.notify 
+
+4.Middleware Pattern 
+Node.js’s middleware architecture is widely used for 
+handling requests and responses in web applications. 
+The Middleware pattern involves a chain of functions that process a request sequentially. 
+
+5.Module Pattern 
+It allows you to organize your code into separate files or modules that encapsulate 
+specific functionality.
+
+6.Decorator Pattern 
+Decorators dynamically add new functionality to objects without 
+affecting other instances.
+class Car {
+  constructor() {
+    this.price = 10000;
+  }
+
+  getPrice() {
+    return this.price;
+  }
+}
+
+class CarOptions {
+  constructor(car) {
+    this.car = car;
+  }
+
+  addGPS() {
+    this.car.price += 500;
+  }
+  
+  addRims() {
+    this.car.price += 300; 
+  }
+}
+
+7.Dependency Injection Pattern 
+Dependency injection is a pattern where modules or classes 
+receive dependencies from an external source rather than creating them internally. 
+It helps with decoupling, testing, and reusability.
+example:
+class Service {
+  constructor(db, logger) {
+    this.db = db;
+    this.logger = logger;
+  }
+
+  async getUser(userId) {
+    const user = await this.db.findUserById(userId);
+    this.logger.log(`Fetched user ${user.name}`);
+    return user;
+  }
+}
+
+// app.js
+const Database = require('./database'); 
+const Logger = require('./logger');
+
+const db = new Database();
+const logger = new Logger();
+
+const service = new Service(db, logger);
+
+8.Promise Pattern 
+Promises are a pattern for asynchronous programming in Node.js. 
+They represent the eventual result of an async operation
